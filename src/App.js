@@ -23,7 +23,7 @@ function App() {
   store.dispatch(initState());
   return (
     <Provider store={store}>
-      <Main />
+      <Main className="flexcontainer" />
     </Provider>
   );
 }

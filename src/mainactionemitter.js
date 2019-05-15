@@ -2,9 +2,18 @@ import { TEXT_CHANGED } from './actions';
 import serviceProvider from './serviceProvider';
 
 const emitTextChanged = (textChanged) => dispatch => {
-    // serviceProvider.abc({}, data => {  dispatch({ type: TEXT_CHANGED, initialParameters: { par1 : textChanged } }); }, 
-    // error => { dispatch(SOME_ERROR_ACTION)});
-   
+    dispatch({ type: TEXT_CHANGED, initialParameters: { par1 : textChanged } }); 
 };
 
-export { emitTextChanged };
+const emitClick = () => dispatch => {
+    serviceProvider.initStateService(
+        { stock: 'aapl' }, 
+        transform => transform,
+        transformedData => { 
+            console.log('got data ', transformedData );
+            dispatch({ type: TEXT_CHANGED, initialParameters: { par1 : transformedData.latestSource } }); 
+        }, 
+        err => console.log(err));
+};
+
+export { emitTextChanged, emitClick };

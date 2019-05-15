@@ -4,7 +4,7 @@ const Body = (params) => {
     return(
         <div>
             Hello from Body
-        </div>
+        </div> 
     );
 };
 

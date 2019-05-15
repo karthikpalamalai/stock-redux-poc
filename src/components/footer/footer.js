@@ -3,7 +3,8 @@ import React from 'react';
 const Footer = (params) => {
     return(
         <div>
-            Hello from Footer
+        <hr></hr>
+        <p>Hello from Footer</p>
         </div>
     );
 };

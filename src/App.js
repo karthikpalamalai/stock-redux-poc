@@ -12,9 +12,12 @@ const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 const initState = () => dispatch => {
    serviceProvider.initStateService(
-     {}, 
+     { stock: 'aapl' }, 
+   //  transform => {},
+     transform => { return { blimpo: transform.companyName } },
      data => {
-        dispatch( { type: SET_INITIAL_STATE_RESP, initialParameters: data });
+       console.log(data);
+       dispatch( { type: SET_INITIAL_STATE_RESP, initialParameters: { par1: data.blimpo } });
      }, 
      err => {});
 };

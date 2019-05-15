@@ -1,13 +1,13 @@
 import InitStateService from './services/initStateService';
-//import InitStateSerivceFake from './services/fakes/initStateService';
-const ENVIRONMENT = "Development";
+import InitStateServiceFake from './services/fakes/initStateService';
+const ENVIRONMENT = "Production"; //"Development";
 
 const ServiceProvider = {
-    initStateService: (inpParams, onSuccess, onError) => {
+    initStateService: (inpParams, transform, onSuccess, onError) => {
         if (ENVIRONMENT === "Production")
-            InitStateService(inpParams, onSuccess, onError);
-        // else
-        //     InitStateServiceFake(inpParams, onSuccess, onError);
+            InitStateService(inpParams, transform, onSuccess, onError);
+        else
+            InitStateServiceFake(inpParams, transform, onSuccess, onError);
     },
 };
 

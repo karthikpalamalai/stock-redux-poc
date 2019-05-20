@@ -1,0 +1,75 @@
+@mixin blimpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .search {
+            flex: 0;
+        }
+        .remaining {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .left-pane {
+                flex: 60%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 1px;
+                margin-bottom: 1px;
+                margin-top: 1px;
+                .chart {
+                    background: red;
+                    flex: 1;
+                    margin: 1px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .grid {
+                    background: red;
+                    flex: 1;
+                    margin: 1px;
+                    @include blimpo();
+                }
+            }
+            .right-pane {
+                flex: 40%;
+                margin: 1px;
+                display: flex;
+                flex-direction: column;
+                .news {
+                    background: red;
+                    flex: 2;
+                    margin: 1px;
+                    @include blimpo();
+                }
+                .overview {
+                    background: red;
+                    flex: 1;
+                    margin: 1px;
+                    @include blimpo();
+                }
+                .top-picks {
+                    background: red;
+                    flex: 1;
+                    margin: 1px;
+                    @include blimpo();
+                }
+            }
+        }
+    }
+    .header,
+    .footer {
+        flex: none;
+    }
+}

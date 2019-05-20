@@ -5,13 +5,13 @@ const emitTextChanged = (textChanged) => dispatch => {
     dispatch({ type: TEXT_CHANGED, initialParameters: { par1 : textChanged } }); 
 };
 
-const emitClick = () => dispatch => {
+const emitClick = stock => dispatch => {
     serviceProvider.initStateService(
-        { stock: 'aapl' }, 
+        { stock }, 
         transform => transform,
         transformedData => { 
-            console.log('got data ', transformedData );
-            dispatch({ type: TEXT_CHANGED, initialParameters: { par1 : transformedData.latestSource } }); 
+            console.log('got data ===>', stock, "   ",  transformedData );
+            dispatch({ type: TEXT_CHANGED, initialParameters: { par1 : transformedData.companyName } }); 
         }, 
         err => console.log(err));
 };

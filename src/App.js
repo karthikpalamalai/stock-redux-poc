@@ -5,7 +5,6 @@ import ReduxThunk from 'redux-thunk';
 import serviceProvider from './serviceProvider';
 import Main from './main';
 import { SET_INITIAL_STATE_RESP } from './actions';
-import './App.css';
 
 import rootReducer from './reducers/rootreducer';
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));

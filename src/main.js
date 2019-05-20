@@ -1,24 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { emitTextChanged, emitClick } from './mainactionemitter';
-import Body from './components/body/body';
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
-import './Main.css';
+import Search from './components/search/search';
+import './main.scss';
 
 const Main = (props) => {
-    var txt = "";
+
     return(
-        <div className='flex-container'>
-            <Header className="hhh" />
-            <input type="text" name="RedInput" style={{"height": "20px", "background":"yellow"}} onChange={el => props.onTextChange(el.target.value)} />        
-            <Body className='body' />
-               Title: {props.main.title}
-               <input type='button' value='click' style={{"width":"40px"}} onClick={props.onClick} />
+        <div className='container'>
+          <Header className='header' />
+          <div className='content'>
+             <div className='search'>
+                <Search />
+             </div>
+             <div className='remaining'>
+                <div className='left-pane'>
+                  <div className='chart'>Chart</div>
+                  <div className='grid'>Grid</div>
+                </div>
+                <div className='right-pane'>
+                  <div className='news'>News</div>
+                  <div className='overview'>Overview</div>
+                  <div className='top-picks'>top-picks</div>
+                </div>
+             </div>
+          </div>
           <Footer className='footer' />
         </div>);
 };
-
 
 const mapStateToProps = state => ({
     main: state.mainReducer
@@ -26,7 +37,7 @@ const mapStateToProps = state => ({
   
 const mapDispatchToProps = dispatch => ({
      onTextChange: (txt) => dispatch(emitTextChanged(txt)),
-     onClick: () => dispatch(emitClick())
+     onClick: ticker => dispatch(emitClick(ticker))
   });
 
 const connectedMain = connect(

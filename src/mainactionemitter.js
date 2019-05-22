@@ -1,9 +1,13 @@
-import { TEXT_CHANGED } from './actions';
+import { TEXT_CHANGED, TAB_CHANGED } from './actions';
 import serviceProvider from './serviceProvider';
 
 const emitTextChanged = (textChanged) => dispatch => {
     dispatch({ type: TEXT_CHANGED, initialParameters: { par1 : textChanged } }); 
 };
+
+const emitTabChanged = (currentActiveTabName) => dispatch => {
+    dispatch({type: TAB_CHANGED, currentActiveTabName });
+}
 
 const emitClick = stock => dispatch => {
     serviceProvider.initStateService(
@@ -16,4 +20,4 @@ const emitClick = stock => dispatch => {
         err => console.log(err));
 };
 
-export { emitTextChanged, emitClick };
+export { emitTextChanged, emitClick, emitTabChanged };

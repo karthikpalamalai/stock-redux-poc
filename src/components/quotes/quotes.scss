@@ -1,0 +1,68 @@
+@mixin blimpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quotes {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    .search { 
+        flex: 10%;       
+        background: purple;
+        margin: 1px;
+        @include blimpo();   
+    }
+    .remaining {
+        flex: 90%;
+        background: gray;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .left-pane {
+            flex: 60%;
+            background: red;
+            margin-right: 1px;
+            display: flex;
+            flex-direction: column;
+            .chart {
+                background: papayawhip;
+                flex: 1;
+                margin: 1px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .grid {
+                background:blue;
+                flex: 1;
+                margin: 1px;
+                @include blimpo();    
+            }
+        }    
+        .right-pane {
+            flex: 40%;
+            background: red;
+            display: flex;
+            flex-direction: column;
+            .news {
+                background: orange;
+                flex: 2;
+                margin: 1px;
+                @include blimpo();
+            }
+            .overview {
+                background: olive;
+                flex: 1;
+                margin: 1px;
+                @include blimpo();
+            }
+            .top-picks {
+                background:palegoldenrod;
+                flex: 1;
+                margin: 1px;
+                @include blimpo();
+            }
+        }
+    }    
+}

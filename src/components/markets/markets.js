@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Header = (params) => {
+const Markets = (params) => {
     return(
         <div> 
-            <p>Hello from Header!</p>
+            <p>Hello from Markets!</p>
             <hr></hr>
         </div>
     );
 };
 
-export default Header;
+export default Markets;

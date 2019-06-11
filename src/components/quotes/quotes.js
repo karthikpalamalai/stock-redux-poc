@@ -6,9 +6,6 @@ import CompanyOverviewItem from './company/company';
 import TopPicks from './toppicks/toppicks';
 
 import HeaderedControl from '../common/headeredControl/headeredControl';
-// import TimeSeriesAreaChart from '../common/timeSeriesAreaChart/timeSeriesAreaChart';
-// import TimeChart from '../common/timeSeriesAreaChart/timeChart';
-// import GoogleChartResize from '../common/timeSeriesAreaChart/googleChartResize';
 import MyAmChart from '../common/timeSeriesAreaChart/amchart';
 
 

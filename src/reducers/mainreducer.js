@@ -4,11 +4,11 @@ const initialState = {
     tabs: [
         {
             tabId: 'quotes', 
-            tabName: 'Quotes', 
+            tabName: 'QUOTES', 
             tabNavPath: '/'
         }, 
-        {tabId: 'markets', tabName: 'Markets', tabNavPath:'/markets'}
-       , {tabId: 'watchlists', tabName: 'WatchLists', tabNavPath:'/watchlists'}
+        {tabId: 'markets', tabName: 'MARKETS', tabNavPath:'/markets'}
+       , {tabId: 'watchlists', tabName: 'WATCHLISTS', tabNavPath:'/watchlists'}
     ],
     title: '',
     text: 'hey, put something here',
@@ -17,9 +17,6 @@ const initialState = {
 
 function mainReducer(state = initialState, action) {
     switch(action.type) {
-        case TEXT_CHANGED:
-        case SET_INITIAL_STATE_RESP:
-            return {...state, title: action.initialParameters.par1}
         case TAB_CHANGED: 
             return {...state, currentActiveTabName: action.currentActiveTabName}
         default:

@@ -1,12 +1,21 @@
 import React from 'react';
 
-import './newsItem.scss';
+import './newsitem.scss';
 
 const NewsItem = ({item}) => {
+   const {
+        title,
+        summary,
+        publicationDate,
+        source,
+        rating, 
+        category,
+        author} = item;
     return(
         <div> 
             <div className='adaptv-newsItem'> 
-                <p> {item} </p>
+                <p> Category {category} </p>
+                <p> Summary {summary} </p>
             </div>
             <div className='adaptv-newsSource'> 
                 <p> news source </p>

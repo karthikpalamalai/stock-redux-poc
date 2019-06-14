@@ -50,7 +50,7 @@ class MyAmChart extends Component {
 
   render() {
     return (
-      <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
+      <div className='AmChart' id="chartdiv" ></div>
     );
   }
 }

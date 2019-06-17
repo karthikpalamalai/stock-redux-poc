@@ -1,12 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './toppicks.scss';
 
-const TopPicks = ({item}) => {
+const TopPeersComp = ({topPeers}) => {
+    const { title, peers } = topPeers;
+    const chld = peers.map(n => <li key={n.ticker}> {n.ticker} </li>);
     return(
-            <div className='.adaptv-toppicks'> 
-                <p> {item} </p>
+            <div className='.adaptv-toppicks'>             
+                <div>
+                    <span>{title}</span>
+                        <br />
+                    <ul>{chld}</ul>
+                </div>
             </div>
     );
 }; 
 
-export default TopPicks; 
+const mapStateToProps = state => ({
+    topPeers: state.topPeersReducer
+});
+  
+const mapDispatchToProps = dispatch => ({
+
+});
+
+const TopPeers = connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(TopPeersComp);
+
+export default TopPeers; 

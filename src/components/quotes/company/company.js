@@ -1,20 +1,40 @@
 import React from 'react';
 import './company.scss';
+import { connect } from 'react-redux';
 
-const CompanyOverview = ({item}) => {
+const CompanyOverviewComp = ({companyOverview}) => {
+    const {
+        name, 
+        ticker,
+        companyUrl, 
+        description
+    } = companyOverview;
     return(
         <div> 
             <div className='adaptv-comanyName'> 
-                <p> {item} </p>
+                <p> {name} ({ticker}) </p>
             </div>
             <div className='adaptv-companyurl'> 
-                <a href="http://www.weareadaptive.com"> www.weareadaptive.com </a>
+                <a href= {companyUrl}> {companyUrl} </a>
             </div>
             <div className='adaptv-companydesc'> 
-                <p> Real-time trading technology is fundamentally changing the way business is conducted within financial services, capital and commodity markets.  </p>
+                <p> { description } </p>
             </div>
         </div>
     );
 }; 
+
+const mapStateToProps = state => ({
+    companyOverview: state.companyOverviewReducer
+});
+  
+const mapDispatchToProps = dispatch => ({
+
+});
+
+const CompanyOverview = connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(CompanyOverviewComp);
 
 export default CompanyOverview; 

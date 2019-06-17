@@ -1,17 +1,23 @@
 import { 
     TEXT_CHANGED ,
-    LATEST_NEWS_SUCCESS
+    LATEST_NEWS_SUCCESS,
+    COMPANY_OVERVIEW_SUCCESS,
+    TOP_PEERS_SUCCESS,
 } from '../actions';
 import ServiceProvider from '../serviceProvider';
 
 const emitTextChanged = (ticker) => dispatch => {
-    console.log("Ticker Value ", ticker);
+    dispatch({ type: TEXT_CHANGED, ticker }); 
+    // ServiceProvider.tickerValidationService(ticker, () => {}, (success) => {}, (err) => {});
     ServiceProvider.latestNewsService(ticker, () => {}, (latestNews) => {
-        dispatch({ type: TEXT_CHANGED, ticker }); 
         dispatch({ type: LATEST_NEWS_SUCCESS, latestNews })
     }, (err) => {});
-    
-
+    ServiceProvider.companyOverviewService(ticker, () => {}, (companyOverview) => {
+        dispatch({ type: COMPANY_OVERVIEW_SUCCESS, companyOverview })
+    }, (err) => {});
+    ServiceProvider.topPeersService(ticker, () => {}, (topPeers) => {
+        dispatch({ type: TOP_PEERS_SUCCESS, topPeers })
+    }, (err) => {});
 };
 
 export { emitTextChanged }

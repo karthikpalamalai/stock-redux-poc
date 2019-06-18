@@ -3,8 +3,10 @@ import {
     LATEST_NEWS_SUCCESS,
     COMPANY_OVERVIEW_SUCCESS,
     TOP_PEERS_SUCCESS,
+    KEYSTATS_SUCCESS,
 } from '../actions';
 import ServiceProvider from '../serviceProvider';
+
 
 const emitTextChanged = (ticker) => dispatch => {
     dispatch({ type: TEXT_CHANGED, ticker }); 
@@ -18,6 +20,10 @@ const emitTextChanged = (ticker) => dispatch => {
     ServiceProvider.topPeersService(ticker, () => {}, (topPeers) => {
         dispatch({ type: TOP_PEERS_SUCCESS, topPeers })
     }, (err) => {});
+    ServiceProvider.keyStatsService(ticker,() => {}, (keystats) => {
+        dispatch({ type: KEYSTATS_SUCCESS, keystats })
+    }, (err) => {});
+
 };
 
 export { emitTextChanged }

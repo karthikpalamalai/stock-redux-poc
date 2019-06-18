@@ -1,6 +1,23 @@
 .adaptv-toppicks {
     display: flex;
-    background: green; 
+    background: #001f4b; 
     justify-content: left;
     font-size: 6;
+}
+.adaptv-toplist {
+    background: #001f4b;
+    flex: 30%;
+    display: flex;
+    justify-content: left;
+    ul {
+        list-style-type: none;
+        margin: 5px;
+        li {
+            margin: 3px;
+            display: inline;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
 }

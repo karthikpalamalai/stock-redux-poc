@@ -3,6 +3,7 @@ import InitStateServiceFake from './services/fakes/initStateService';
 import LatestNewsServiceFake from './services/fakes/latestNewsService';
 import CompanyOverviewServiceFake from './services/fakes/companyOverview';
 import TopPeersServiceFake from './services/fakes/toppeersService';
+import KeyStatsServiceFake from './services/fakes/keystatsService';
 
 const ENVIRONMENT = "Production"; //"Development";
 
@@ -21,7 +22,11 @@ const ServiceProvider = {
     },
     topPeersService: (inpParams, transform, onSuccess, onError) => {
         TopPeersServiceFake(inpParams, transform, onSuccess, onError);
+    }, 
+    keyStatsService: (inpParams, transform, onSuccess, onError) => {
+        KeyStatsServiceFake(inpParams, transform, onSuccess, onError)
     }
+
 };
 
 

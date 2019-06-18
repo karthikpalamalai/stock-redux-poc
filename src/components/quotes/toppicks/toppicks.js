@@ -6,11 +6,13 @@ const TopPeersComp = ({topPeers}) => {
     const { title, peers } = topPeers;
     const chld = peers.map(n => <li key={n.ticker}> {n.ticker} </li>);
     return(
-            <div className='.adaptv-toppicks'>             
+            <div className='adaptv-toppicks'>             
                 <div>
                     <span>{title}</span>
                         <br />
-                    <ul>{chld}</ul>
+                    <div className='adaptv-toplist'>     
+                        <ul >{chld}</ul>
+                    </div>     
                 </div>
             </div>
     );

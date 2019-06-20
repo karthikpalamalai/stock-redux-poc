@@ -4,6 +4,7 @@ import {
     COMPANY_OVERVIEW_SUCCESS,
     TOP_PEERS_SUCCESS,
     KEYSTATS_SUCCESS,
+    STOCK_CHART_SUCCESS
 } from '../actions';
 import ServiceProvider from '../serviceProvider';
 
@@ -22,6 +23,9 @@ const emitTextChanged = (ticker) => dispatch => {
     }, (err) => {});
     ServiceProvider.keyStatsService(ticker,() => {}, (keystats) => {
         dispatch({ type: KEYSTATS_SUCCESS, keystats })
+    }, (err) => {});
+    ServiceProvider.stockChartService(ticker,() => {}, (chartdata) => {
+        dispatch({ type: STOCK_CHART_SUCCESS, chartdata })
     }, (err) => {});
 
 };

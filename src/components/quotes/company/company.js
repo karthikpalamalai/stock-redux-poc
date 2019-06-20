@@ -1,6 +1,21 @@
 import React from 'react';
-import './company.scss';
 import { connect } from 'react-redux';
+
+import './company.scss';
+
+// const c<T> = {
+//     hasError: boolean,
+//     errors: Array<string>,
+//     payload: {
+//         contained: {
+//             hasErrors:
+//             errors:
+//             payload: {
+//                 ...
+//             }
+//         }
+//     }
+// }
 
 const CompanyOverviewComp = ({companyOverview}) => {
     const {

@@ -21,7 +21,7 @@
         justify-content: space-between;
         .left-pane {
             flex: 60%;
-            background: red;
+            background: #001f4b;
             margin-right: 1px;
             display: flex;
             flex-direction: column;
@@ -68,4 +68,19 @@
             }
         }
     }    
+}
+.adaptv-frequency {
+    display: flex;
+    background: #001f4b ;
+    color: lightgreen;
+    justify-content: flex-end;
+    font-size: 6;
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 5px;
+        text-align: right;
+      }
 }

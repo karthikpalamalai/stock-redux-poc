@@ -25,6 +25,9 @@ const ServiceProvider = {
     }, 
     keyStatsService: (inpParams, transform, onSuccess, onError) => {
         KeyStatsServiceFake(inpParams, transform, onSuccess, onError)
+    },
+    stockChartService: (inpParams, transform, onSuccess, onError) => {
+        KeyStatsServiceFake(inpParams, transform, onSuccess, onError)
     }
 
 };

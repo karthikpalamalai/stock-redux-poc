@@ -71,7 +71,7 @@ const keystatsComp = ({ keystats }) => {
 }; 
 
 const mapStateToProps = state => ({
-    keystats: state.keystatReducers
+    keystats: state.keystatReducer
 });
   
 const mapDispatchToProps = dispatch => ({

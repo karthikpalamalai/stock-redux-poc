@@ -13,7 +13,6 @@ const SearchComp = (props) => {
     return (
         <div className="search"> 
             <label htmlFor="tickerSearch"> 
-                {ticker} 
                 <input 
                     onChange={handleTickerChange}
                     id="tickerSearch"

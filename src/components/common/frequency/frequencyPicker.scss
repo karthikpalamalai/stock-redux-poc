@@ -1,0 +1,19 @@
+.freq-picker{
+    .freq-btn {
+        background-color: transparent;
+        border: none;
+        margin-right: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        outline: none;
+        border: none;
+    }
+    .active-freq {
+        color: white;
+
+    }
+    .inactive-freq{
+        color: rgb(50, 95, 110);
+    }    
+}

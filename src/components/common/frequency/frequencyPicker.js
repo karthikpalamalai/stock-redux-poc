@@ -1,20 +1,22 @@
 import React from 'react';
 
-const FrequencyPicker = ({ config, selectedID, onFrequencyChanged }) => {
+import './frequencyPicker.scss';
 
-    // const listButton = config.forEach(function(value, key) {
-    //         <div>
-    //             <button key={value.id} type="button" onClick={e => onFrequencyChanged(e)} class="btn btn-primary btn-xs"> {value.display} </button> 
-    //         </div>
-    // });
+const FrequencyPicker = (props) => {
 
-        return (
-             config.map((cfg) => 
-                <div>
-                    <button key={cfg.id} type="button" onClick={e => onFrequencyChanged(e)} class="btn btn-primary btn-xs"> {cfg.display} </button> 
-                </div>
-            )
-        );    
+    const {config, selectedId, onFrequencyChanged } = props
+
+    console.log(" FrequencyPicker => ", selectedId)     
+
+    const buttonList = config.map(
+        (cfg) => 
+        <button key={cfg.id} class={'freq-btn ' + (selectedId === cfg.id ? 'active-freq' : 'inactive-freq')} type="button" onClick={() => onFrequencyChanged(cfg)}> {cfg.display} </button> 
+    );
+   return (
+        <div className='freq-picker'>
+             { buttonList }
+        </div>
+   );    
 }
 
-export default FrequencyPicker;
+export default FrequencyPicker; 
